@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeRouter : PresenterToHomeRouterProtocol {
+    
     static func createModuleHome() -> HomeViewController {
         let view = HomeViewController()
         let presenter : ViewToHomePresenterProtocol & InteractorToHomePresenterProtocol = HomePresenter()
@@ -23,6 +25,14 @@ class HomeRouter : PresenterToHomeRouterProtocol {
         
         return view
     }
+    
+    func pushScreenCreate(menu: MenuList, navigationController: UINavigationController) {
+        if menu.name == "Buat Event" {
+            let createEventScreen = CreateRouter.createModuleCreate()
+            navigationController.pushViewController(createEventScreen, animated: true)
+        }
+    }
+    
     
     
 }

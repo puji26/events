@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func setupUI(){
-        let login = HomeRouter.createModuleHome()
+        let login = LoginRouter.createModuleLogin()
         let navigationController = UINavigationController()
         navigationController.navigationBar.tintColor = UIColor.white
         navigationController.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.4556527138, blue: 0, alpha: 1)

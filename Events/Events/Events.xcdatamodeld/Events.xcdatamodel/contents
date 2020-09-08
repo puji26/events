@@ -6,8 +6,8 @@
         <attribute name="lokasi" optional="YES" attributeType="String"/>
         <attribute name="nama" optional="YES" attributeType="String"/>
         <attribute name="penyelenggara" optional="YES" attributeType="String"/>
-        <attribute name="tanggaHingga" optional="YES" attributeType="String"/>
         <attribute name="tanggalDari" optional="YES" attributeType="String"/>
+        <attribute name="tanggalHingga" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Events" positionX="-2065.1484375" positionY="-3647.03125" width="128" height="148"/>

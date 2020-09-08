@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 class LoginPresenter : ViewToLoginPresenterProtocol {
-   
     
     var view: PresenterToLoginViewController?
     
@@ -23,10 +22,7 @@ class LoginPresenter : ViewToLoginPresenterProtocol {
     
     func showScreenHome(navigationController: UIViewController) {
         router?.presentScreenHome(navigationController: navigationController)
-       }
-       
-       
-    
+    }
 }
 extension LoginPresenter : InteractorToLoginPresenterProtocol {
     func successLogin() {

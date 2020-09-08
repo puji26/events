@@ -11,28 +11,35 @@ import CoreData
 import UIKit
 
 class CreateEntity {
-    static func createEvent(nama:String,lokasi:String,deskripsi:String,gambar:UIImage,tanggalDari:String,tanggalHingga:String,penyelenggara:String){
+    
+    // MARK: - Home To Presenter
+   
+    typealias eventsHandler = (_ success:Bool?,_ error:String? ) -> Void
+    static func createEvent(event:Event,completion : @escaping (eventsHandler)){
         // refer to Appdelegate
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        
+      
         // create a context
         let managedContext = appDelegate.persistentContainer.viewContext
         
         // entity for new record
-        guard let eventsEntity = NSEntityDescription.entity(forEntityName: "Events", in:managedContext) else { return  }
+         let eventsEntity = NSEntityDescription.entity(forEntityName: "Events", in:managedContext)
         
         // add data
-        let events = NSManagedObject(entity:eventsEntity, insertInto: managedContext)
-        events.setValue(nama, forKey: "nama")
-        events.setValue(lokasi, forKey: "lokasi")
-        events.setValue(gambar, forKey: "gambar")
-        events.setValue(tanggalDari, forKey: "tanggalDari")
-        events.setValue(tanggalHingga, forKey: "tanggalHingga")
-        events.setValue(penyelenggara, forKey: "penyelenggara")
+        let events = NSManagedObject(entity:eventsEntity!, insertInto: managedContext)
+        events.setValue(event.nama, forKey: "nama")
+        events.setValue(event.lokasi, forKey: "lokasi")
+        events.setValue(event.gambar, forKey: "gambar")
+        events.setValue(event.tanggalDari, forKey: "tanggalDari")
+        events.setValue(event.tanggalHingga, forKey: "tanggalHingga")
+        events.setValue(event.penyelenggara, forKey: "penyelenggara")
         do{
             try managedContext.save()
+            completion(true,nil)
+            
         }catch let error as NSError{
             print(error)
+            completion(nil,error.localizedDescription)
         }
     }
 }

@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSandi: UITextField!
     
-    
     var presentor : ViewToLoginPresenterProtocol?
     
     override func viewDidLoad() {
@@ -38,7 +37,7 @@ extension LoginViewController : PresenterToLoginViewController {
     }
     
     func showError(error: String) {
-        
+        self.showAlertError(title: "Error", message: error)
     }
     
     

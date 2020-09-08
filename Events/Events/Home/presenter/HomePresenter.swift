@@ -7,9 +7,9 @@
 //
 
 import Foundation
-
+import UIKit
 class HomePresenter : ViewToHomePresenterProtocol {
-   
+    
     var view: PresenterToHomeViewController?
     
     var interactor: PresenterToHomeInteractorProtocol?
@@ -18,14 +18,28 @@ class HomePresenter : ViewToHomePresenterProtocol {
     
     func loadDataEvent() {
         interactor?.loadDataEvent()
-       }
-       
+    }
     
+    func loadDataMenu() {
+        interactor?.loadDataMenu()
+    }
+    
+    func showScreenCreateEvent(menu: MenuList,navigationController: UINavigationController) {
+        router?.pushScreenCreate(menu: menu, navigationController: navigationController)
+    }
     
 }
 extension HomePresenter : InteractorToHomePresenterProtocol {
+    func loadDataUpComing(event: Event?) {
+        view?.dataUpcoming(event: event)
+    }
+    
     func loadDataEvent(eventArr: [Event]) {
         view?.dataEvents(event: eventArr)
+    }
+    
+    func loadDatamenu(menuArr: [MenuList]) {
+        view?.dataMenu(menu: menuArr)
     }
     
     

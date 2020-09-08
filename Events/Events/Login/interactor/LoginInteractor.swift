@@ -19,6 +19,5 @@ class LoginInteractor : PresenterToLoginInteractorProtocol {
         } else {
             self.presenter?.errorLogin(error: "username or password is wrong")
         }
-        
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ViewToHomePresenterProtocol : class {
     var view : PresenterToHomeViewController? {get set}
@@ -14,32 +15,31 @@ protocol ViewToHomePresenterProtocol : class {
     var router : PresenterToHomeRouterProtocol? {get set}
     
     func loadDataEvent()
-//    func postLogin(username:String,password:String)
-//    func showScreenHome(navigationController:UINavigationController)
+    func loadDataMenu()
+    func showScreenCreateEvent(menu:MenuList ,navigationController:UINavigationController)
 }
 
 protocol PresenterToHomeViewController : class {
-//    func successLogin()
-//    func showError(error:String)
+    func dataUpcoming(event:Event?)
     func dataEvents(event:[Event])
+    func dataMenu(menu:[MenuList])
 }
 
 protocol PresenterToHomeRouterProtocol : class {
-    static func createModuleHome() -> HomeViewController
-//    func pesentScreenHome(navigationController:UINavigationController)
+static func createModuleHome() -> HomeViewController
+   func pushScreenCreate(menu:MenuList,navigationController:UINavigationController)
 }
 
 protocol PresenterToHomeInteractorProtocol : class {
     var presenter :InteractorToHomePresenterProtocol? {get set}
-//    func postLogin(username:String,password:String)
-        func loadDataEvent()
+    func loadDataEvent()
+    func loadDataMenu()
 }
 
 protocol InteractorToHomePresenterProtocol : class {
-//    func successLogin()
-//    func errorLogin(error:String)
-    
     func loadDataEvent(eventArr:[Event])
+    func loadDatamenu(menuArr:[MenuList])
+    func loadDataUpComing(event:Event?)
 }
 
 

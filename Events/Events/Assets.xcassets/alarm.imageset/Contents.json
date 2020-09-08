@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "baseline_alarm_white_18dp.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

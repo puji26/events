@@ -19,6 +19,34 @@ struct Event {
     var tanggalHingga : String
     var gambar : Data
     
+    var imageGambar : UIImage? {
+        return UIImage.init(data: gambar) 
+    }
+    
+    var date : Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        
+        guard let dateTimeData = dateFormatter.date(from: tanggalDari) else {return nil}
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.timeZone = TimeZone.current
+        
+        dateFormatterPrint.dateFormat = "yyyy-MM-dd"
+        dateFormatterPrint.timeZone = TimeZone.current
+        dateFormatterPrint.locale = Locale.current
+        let time  = dateFormatterPrint.string(from: dateTimeData)
+        
+        let dateFormatterdate = DateFormatter()
+        
+        dateFormatterdate.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatterdate.date(from: time)
+        
+        return date
+    }
+    
     init( nama : String , lokasi : String , deskripsi : String , penyelenggara : String , tanggalDari : String, tanggalHingga:String  ,gambar : Data) {
         self.nama = nama
         self.lokasi = lokasi
@@ -32,42 +60,5 @@ struct Event {
 }
 
 class loadEvent {
-    typealias eventsHandler = (_ event:[Event]? ) -> Void
-    static func loadData(completion : @escaping (eventsHandler)){
-        
-        // refer to Appdelegate
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        
-        // create a context
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        // fetch data
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Events") 
-        
-        do{
-            var arrEvents = [Event]()
-            let result = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
-            
-            
-            for i in 0 ..< result.count{
-                let nama =  result[i].value(forKey: "nama") as? String ?? ""
-                let lokasi = result[i].value(forKey: "lokasi") as? String ?? ""
-                let deskripsi = result[i].value(forKey: "deskripsi") as? String ?? ""
-                let penyelenggara = result[i].value(forKey: "penyelenggara") as? String ?? ""
-                let tanggalDari = result[i].value(forKey: "tanggalDari") as? String ?? ""
-                let tanggalHingga = result[i].value(forKey: "tanggalDari") as? String ?? ""
-                let gambar = result[i].value(forKey: "tanggalDari") as! Data
-                
-                let events = Event(nama: nama, lokasi: lokasi, deskripsi: deskripsi, penyelenggara: penyelenggara, tanggalDari : tanggalDari, tanggalHingga:tanggalHingga , gambar: gambar)
-                arrEvents.append(events)
-            }
-            
-            completion(arrEvents)
-            
-        }catch let error {
-            print(error)
-        }
-        
-    }
     
 }

@@ -10,7 +10,18 @@ import Foundation
 
 
 class CreateInteractor : PresenterToCreateInteractorProtocol {
+    
     var presenter: InteractorToCreatePresenterProtocol?
     
-    
+    func postCreateEvent(event: Event) {
+        CreateEntity.createEvent(event: event) { (success, error) in
+          
+            if error != nil {
+                self.presenter?.showError(error: error ?? "")
+            } else {
+                self.presenter?.successCreateEvent()
+            }
+        }
+        
+    }
 }

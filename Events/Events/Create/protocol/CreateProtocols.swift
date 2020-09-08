@@ -7,35 +7,37 @@
 //
 
 import Foundation
-
-import Foundation
+import UIKit
 
 protocol ViewToCreatePresenterProtocol : class {
     var view : PresenterToCreateViewController? {get set}
     var interactor : PresenterToCreateInteractorProtocol? {get set}
     var router : PresenterToCreateRouterProtocol? {get set}
     
-//    func postLogin(username:String,password:String)
-//    func showScreenHome(navigationController:UINavigationController)
+    func postCreateEvent(event:Event)
+      func backToHome(navigationController:UINavigationController)
+    //    func postLogin(username:String,password:String)
+    //    func showScreenHome(navigationController:UINavigationController)
 }
 
 protocol PresenterToCreateViewController : class {
-//    func successLogin()
-//    func showError(error:String)
+    func successCreateEvent()
+    func showError(error:String)
+   
 }
 
 protocol PresenterToCreateRouterProtocol : class {
     static func createModuleCreate() -> CreateViewController
-//    func pesentScreenHome(navigationController:UINavigationController)
+    func backToHome(navigationController:UINavigationController)
 }
 
 protocol PresenterToCreateInteractorProtocol : class {
     var presenter :InteractorToCreatePresenterProtocol? {get set}
-//    func postLogin(username:String,password:String)
-       
+    func postCreateEvent(event:Event)
+  
 }
 
 protocol InteractorToCreatePresenterProtocol : class {
-//    func successLogin()
-//    func errorLogin(error:String)
+    func successCreateEvent()
+    func showError(error:String)
 }

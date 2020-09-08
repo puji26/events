@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController" customModule="Events" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="epf-ez-ZxF" id="Kvf-ut-nrj"/>
+                <outlet property="timeeLabel" destination="TuM-EF-1r5" id="086-Ah-bRJ"/>
+                <outlet property="view" destination="nJV-QU-jfa" id="Dd5-eS-5h6"/>
+                <outlet property="viewDatePicker" destination="X9Q-Wb-f5M" id="Ofe-5U-mOU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="nJV-QU-jfa">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9Q-Wb-f5M">
+                    <rect key="frame" x="88" y="214" width="238" height="478"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kuS-cC-QGd">
+                            <rect key="frame" x="0.0" y="0.0" width="238" height="478"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuM-EF-1r5">
+                                    <rect key="frame" x="0.0" y="0.0" width="238" height="33"/>
+                                    <color key="backgroundColor" name="Blue"/>
+                                    <color key="tintColor" name="Primary"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="33" id="gpe-ka-Pmo"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="epf-ez-ZxF">
+                                    <rect key="frame" x="0.0" y="37" width="238" height="404"/>
+                                    <locale key="locale" localeIdentifier="id"/>
+                                </datePicker>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su1-SM-mRp">
+                                    <rect key="frame" x="0.0" y="445" width="238" height="33"/>
+                                    <color key="backgroundColor" name="Blue"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="33" id="GES-PW-CF4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="tintColor" name="Primary"/>
+                                    <state key="normal" title="Submit">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnSubmit:" destination="-1" eventType="touchUpInside" id="bSK-bd-hEy"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="TuM-EF-1r5" firstAttribute="leading" secondItem="kuS-cC-QGd" secondAttribute="leading" id="13h-oe-PZm"/>
+                                <constraint firstItem="Su1-SM-mRp" firstAttribute="leading" secondItem="kuS-cC-QGd" secondAttribute="leading" id="F6B-oL-yuN"/>
+                                <constraint firstItem="TuM-EF-1r5" firstAttribute="top" secondItem="kuS-cC-QGd" secondAttribute="top" id="Pjd-K3-lBz"/>
+                                <constraint firstAttribute="trailing" secondItem="Su1-SM-mRp" secondAttribute="trailing" id="UNp-59-Tme"/>
+                                <constraint firstAttribute="trailing" secondItem="TuM-EF-1r5" secondAttribute="trailing" id="nFc-L4-Jov"/>
+                                <constraint firstAttribute="bottom" secondItem="Su1-SM-mRp" secondAttribute="bottom" id="upY-dS-Obd"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="kuS-cC-QGd" secondAttribute="bottom" id="UyD-3I-mw7"/>
+                        <constraint firstItem="kuS-cC-QGd" firstAttribute="leading" secondItem="X9Q-Wb-f5M" secondAttribute="leading" id="b08-i1-ork"/>
+                        <constraint firstItem="kuS-cC-QGd" firstAttribute="top" secondItem="X9Q-Wb-f5M" secondAttribute="top" id="jWc-ZS-ada"/>
+                        <constraint firstAttribute="trailing" secondItem="kuS-cC-QGd" secondAttribute="trailing" id="xmO-EA-MRL"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29607599429999998" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="X9Q-Wb-f5M" firstAttribute="leading" secondItem="Sem-GC-SGR" secondAttribute="leading" constant="88" id="B97-pb-lZ7"/>
+                <constraint firstItem="X9Q-Wb-f5M" firstAttribute="top" secondItem="Sem-GC-SGR" secondAttribute="top" constant="170" id="RPF-oc-dy7"/>
+                <constraint firstItem="Sem-GC-SGR" firstAttribute="trailing" secondItem="X9Q-Wb-f5M" secondAttribute="trailing" constant="88" id="ftS-ls-gIp"/>
+                <constraint firstItem="Sem-GC-SGR" firstAttribute="bottom" secondItem="X9Q-Wb-f5M" secondAttribute="bottom" constant="170" id="x20-f6-maQ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Sem-GC-SGR"/>
+            <point key="canvasLocation" x="772" y="793"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Blue">
+            <color red="0.082352941176470587" green="0.32156862745098042" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.99607843137254903" green="0.49019607843137253" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

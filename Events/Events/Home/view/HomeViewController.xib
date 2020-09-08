@@ -14,10 +14,10 @@
                 <outlet property="collectionMenu" destination="eTv-Oy-wbv" id="BJW-OA-iao"/>
                 <outlet property="imgEventUpComing" destination="jVj-Wf-i2x" id="m40-Mp-n2n"/>
                 <outlet property="imgProfile" destination="VlW-th-pW8" id="Qd8-ZQ-UIn"/>
-                <outlet property="lblDate" destination="eyQ-4M-Erp" id="99C-6z-d0J"/>
+                <outlet property="lblDate" destination="BMu-BD-4rU" id="hyC-ES-9cA"/>
                 <outlet property="lblEventTerbaru" destination="fy3-4Q-O3L" id="rHT-aL-Hxf"/>
                 <outlet property="lblLokasiEvent" destination="u3G-y0-WI6" id="nak-uX-Jwq"/>
-                <outlet property="lblMonth" destination="BMu-BD-4rU" id="gnY-pM-4xl"/>
+                <outlet property="lblMonth" destination="eyQ-4M-Erp" id="va0-Zu-akb"/>
                 <outlet property="lblName" destination="tRF-bt-Kg9" id="Epk-B5-5Qg"/>
                 <outlet property="lblNameEvent" destination="Cys-37-Edc" id="XHW-Rq-1bC"/>
                 <outlet property="lblSalam" destination="Uye-yf-wsQ" id="Tzf-FM-zfb"/>
@@ -101,7 +101,6 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jVj-Wf-i2x">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="191"/>
-                            <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="191" id="dwN-mb-4pA"/>
                             </constraints>
